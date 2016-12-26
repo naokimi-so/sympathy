@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 var milkcocoa = MilkCocoa.connectWithApiKey('eggix5vdqzf.mlkcca.com', 'API_Key', 'API_Secret');
