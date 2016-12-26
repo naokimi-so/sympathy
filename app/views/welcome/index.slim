@@ -3,14 +3,18 @@ html lang="ja"
 	head
 		meta charset="UTF-8"
 		title 教授ログイン
-		link href="../stylesheet/bootstrap.min.css"
-		link href="../stylesheet/style.css"
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    	= csrf_meta_tags
 	body
+		header class="navbar navbar-default" role="navigation"
+	
+    #container
 		h1 sympathy
 	
 	/教授のログイン画面
 	p ログイン
 	#input
-	p <input type="text" name="id" value="id">
-	p <input type="password" value="">
-	p <input type="button" value="ログイン">
+		p <input type="text" name="id" value="">
+		p <input type="password" value="">
+		p <input type="button" value="ログイン">
