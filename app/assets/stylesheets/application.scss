@@ -1,65 +1,7 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require_tree .
  *= require_self
  */
-
- #niconicocoa {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 99999999999999999;
-  pointer-events: none;
-  font-size: 50px;
-  color: #fff;
-  text-shadow: 1px 2px 0 #000, 1px -2px 0 #000, -1px 2px 0 #000, -1px -2px 0 #000, 2px 1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, -2px -1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
-  text-align: left;
-  overflow: hidden;
-}
-#niconicocoa .status {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  font-size: 15px;
-}
-#niconicocoa .comment {
-  position: absolute;
-  left: 100%;
-  width: 100%;
-  margin: 0;
-  animation-name: textanime;
-  animation-duration: 15s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-@-webkit-keyframes textanime {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -300%;
-  }
-}
-@keyframes textanime {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -300%;
-  }
-}
