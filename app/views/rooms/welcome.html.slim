@@ -1,8 +1,7 @@
 h1 Sympathy
-form.form-inline
+= form_for @professor ,html: {class:"form-inline"} do |f| 
   .form-group
-    label.sr-only for="exampleInputAmount"  Amount (in dollars)
     .input-group
-      input#exampleInputAmount.form-control placeholder="Amount" type="text" /
-      .input-group-addon .00
-  button.btn.btn-primary type="submit"  Transfer cash
+      =f.text_field :room, class:"form-control", placeholder:"ルーム名"
+  button.btn.btn-primary type="submit" 入室する
+  
