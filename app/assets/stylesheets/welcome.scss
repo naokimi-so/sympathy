@@ -1,14 +1,35 @@
 h1 {
     margin-left:15px;
 }
-.loginform p{
-    text-align:center;
-}
-.form-group .btn.btn-primary{
-    position:center;
-}
-.form-group p{
-    text-align:center;
+    
+    //login.html.slim
+#login{
+    .loginform p{
+        text-align:center;
+    }  
+    .form-group .btn.btn-primary{
+        position:center;
+    }
+    .form-group p{
+        text-align:center;
+    }
 }
 
+    //professor.html.slim
+#rooms {
+    text-align:center;
+    .form-group .p{
+            text-align:left;
+        }
+    padding-left:40px;
+    .btn-info{
+        width:60%;
+        opacity:0.9;
+    }
+}
 
+#newroom{
+    .form-group{
+        padding-left:40px;
+    }    
+}
