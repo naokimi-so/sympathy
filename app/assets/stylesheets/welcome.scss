@@ -1,3 +1,4 @@
+
 h1 {
     margin-left:15px;
 }
@@ -17,19 +18,20 @@ h1 {
 
     //professor.html.slim
 #rooms {
-    text-align:center;
-    .form-group .p{
-            text-align:left;
-        }
+    text-align:left;
     padding-left:40px;
     .btn-info{
-        width:60%;
+        width:100%;
+        margin-left:50px;
         opacity:0.9;
     }
 }
 
 #newroom{
     .form-group{
-        padding-left:40px;
+        margin-left:150px;
     }    
+    h3{
+        margin-left:100px;
+    }
 }
