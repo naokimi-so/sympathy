@@ -1,0 +1,27 @@
+.text-center.contents
+  h2 Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :name
+    .field
+      = f.text_field :name, placeholder: "name", autofocus: true
+    .field
+      = f.label :email
+      br/
+      = f.email_field :email, placeholder: "professor-email", autofocus: true
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        em
+          #{@minimum_password_length} characters minimum
+      br/
+      = f.password_field :password, placeholder: "Password", autocomplete: "off"
+    .field
+      = f.label :password_confirmation
+      br/
+      = f.password_field :password_confirmation, placeholder: "Password(Confilm)", autocomplete: "off"
+    .actions
+      = f.submit "Sign up"
+    .session
+      = link_to 'login', new_professor_session_path

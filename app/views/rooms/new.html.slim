@@ -1,0 +1,6 @@
+.contents.row
+  .div.container
+    = form_for(@room) do |f|
+      = f.label :title, 'ルーム名', class: 'room_name'
+      = f.text_field :title, placeholder: 'ルーム名を入力してください'
+      = f.submit 'Create', class: 'btn btn-sm btn-primary'

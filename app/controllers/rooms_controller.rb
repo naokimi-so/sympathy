@@ -1,18 +1,29 @@
 class RoomsController < ApplicationController
 
+  def index
+  end
+
   def show
     @room = Room.find(params[:id])
     @room_name = @room.title
   end
 
+  def search
+    # 検索フォームのキーワードをあいまい検索して、roomsテーブルからroom情報を取得する
+    @rooms = Room.where('title LIKE(?)', "%#{params[:keyword]}%")
+  end
+
   def new
+    @room = Room.new
   end
 
   def create
-    Room.create(room_params)
+    @room = Room.new(room_params)
+    @room.save
+    redirect_to root_path
   end
 
   def room_params
-    params.require(:title).permit(:title).merge(user_id: current_user.id)
+    params.require(:room).permit(:title)
   end
 end

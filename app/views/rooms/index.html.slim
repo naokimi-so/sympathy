@@ -1,0 +1,11 @@
+.text-center
+  h2 sympathy
+  .room_search
+    = link_to 'ルームをさがす', search_rooms_path
+
+  .professor
+  - if professor_signed_in?
+    .mypage
+      = link_to 'マイページ', professor_path(current_professor)
+    .logout
+      = link_to 'ログアウト', destroy_professor_session_path, method: :delete
