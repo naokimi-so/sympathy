@@ -1,4 +1,5 @@
 class ProfessorsController < ApplicationController
+  before_action :authenticate_professor!
 
   def show
     @professors = Professor.find(params[:id])
