@@ -1,5 +1,6 @@
-h3 ルーム名：
-= @room_name
+h3 
+  | ルーム名： 
+  = @room_name
 
 / スライド
 .slide
@@ -20,8 +21,15 @@ button.btn.btn-default.btn-lg type="button"
   .form-group
     = f.submit '送信', class: 'btn btn-sm btn-default'
 /コメント
-.comment-field
-  h3 コメント
-  .comment-content
+.panel.panel-default
+  .panel-heading コメント
+  table.table
+    tr
+      th コメント
+      th 名前
+      th 投稿日時
     - @comments.each do |comment|
-      p = comment.text
+      tr 
+        td = comment.text
+        td = comment.nickname
+        td = distance_of_time_in_words_to_now(comment.created_at)
