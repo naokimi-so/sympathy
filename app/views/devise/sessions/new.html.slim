@@ -1,0 +1,15 @@
+.text-center.contents
+  h2 Log in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email
+      br/
+      = f.email_field :email, placeholder: "email", autofocus: true, size: "300px"
+    .field
+      = f.label :password
+      br/
+      = f.password_field :password, placeholder: "password", autocomplete: "off"
+    .actions
+      = f.submit "Log in"
+    .session
+      = link_to 'Sign up', new_professor_registration_path

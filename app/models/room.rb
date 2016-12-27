@@ -3,5 +3,5 @@ class Room < ActiveRecord::Base
   has_many :likes
   has_many :comments
 
-  validates title, uniqueness: true # 値がユニークであれば検証成功
+  validates :title, uniqueness: true # 値がユニークであれば検証成功
 end
