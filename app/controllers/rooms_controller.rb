@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
     @room_name = @room.title
     @comment = Comment.new
     @comments = Comment.all
+    @speaker_deck_id = @room.speaker_deck
   end
 
   def search
