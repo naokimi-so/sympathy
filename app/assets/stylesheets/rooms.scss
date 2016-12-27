@@ -2,9 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//グッド・バッドボタン
+.evaluation-buttons {
+  margin-top: 20px;
+  .good-button {
+    margin-right: 10px;
+  }
+}
+
+// コメントフォーム
+.comment-forms {
+  margin: 30px 0 60px 0;
+  .comment-name {
+    margin-right: 10px;
+  }
+  .comment-text{
+    margin-right: 10px;
+  }
+}
+
+// コメント一覧
+.comment-table {
+  th{
+    background: #fff;
+  }
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  overflow: scroll;
+  height: 400px;
+  background-color: #f9f9f9;
+  box-shadow: 1px 1px 1px #999;
+}
+
+
+//スライド
 .slide {
   max-width: 600px;
   .speakerdeck-iframe{
-  max-height: 400px;    
+  max-height: 400px;
   }
 }
