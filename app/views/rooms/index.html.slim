@@ -11,5 +11,7 @@
       = link_to 'マイページ', professor_path(current_professor)
     .logout
       = link_to 'ログアウト', destroy_professor_session_path, method: :delete
+    p
+      = link_to 'アカウント管理', edit_professor_registration_path
   - if !professor_signed_in?
      = link_to 'ログイン', new_professor_session_path
