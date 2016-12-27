@@ -1,35 +1,39 @@
-h3 
+h3.page-header 
   | ルーム名： 
   = @room_name
 
-/ スライド
-.slide
-  script.speakerdeck-embed async="" data-id="#{@speaker_deck_id}" src="https://speakerdeck.com/assets/embed.js" 
-
-button.btn.btn-default.btn-lg type="button" 
-  span.glyphicon.glyphicon-thumbs-up aria-hidden="true" 
-  | Good
-button.btn.btn-default.btn-lg type="button" 
-  span.glyphicon.glyphicon-thumbs-down aria-hidden="true" 
-  | Bad
-
-= form_for [@room,@comment] , html: {class: "form-inline"} do |f|
-  .form-group
-    = f.text_field :nickname, placeholder: '名前'
-  .form-group
-    = f.text_field :text, placeholder: 'コメント'
-  .form-group
-    = f.submit '送信', class: 'btn btn-sm btn-default'
-/コメント
-.panel.panel-default
-  .panel-heading コメント
-  table.table
-    tr
-      th コメント
-      th 名前
-      th 投稿日時
-    - @comments.each do |comment|
-      tr 
-        td = comment.text
-        td = comment.nickname
-        td = distance_of_time_in_words_to_now(comment.created_at)
+.col-md-7
+  // スライド
+  .slide
+    script.speakerdeck-embed async="" data-id="#{@speaker_deck_id}" src="https://speakerdeck.com/assets/embed.js" 
+  // グッド・バッドボタン
+  .evaluation-buttons
+    button.good-button.btn.btn-default.btn-lg type="button" 
+      span.glyphicon.glyphicon-thumbs-up aria-hidden="true" 
+      | Good
+    button.bad-button.btn.btn-default.btn-lg type="button" 
+      span.glyphicon.glyphicon-thumbs-down aria-hidden="true" 
+      | Bad
+      
+  // コメント入力フォーム
+  .comment-forms
+    = form_for [@room,@comment] , html: {class: "form-inline"} do |f|
+      .form-group.comment-name
+        = f.text_field :nickname, class: "form-control", placeholder: '名前'
+      .form-group.comment-text
+        = f.text_field :text, class: "form-control", placeholder: 'コメント'
+      .form-group
+        = f.submit '送信', class: 'btn btn-sm btn-primary'
+  // コメントの表示
+.col-md-5
+  .comment-table
+      table.table
+        tr
+          th コメント
+          th 名前
+          th 投稿日時
+        - @comments.each do |comment|
+          tr 
+            td = comment.text
+            td = comment.nickname
+            td = distance_of_time_in_words_to_now(comment.created_at)
