@@ -1,7 +1,14 @@
-h1 Sympathy
-= form_for @professor ,html: {class:"form-inline"} do |f| 
-  .form-group
-    .input-group
-      =f.text_field :room, class:"form-control", placeholder:"ルーム名"
-  button.btn.btn-primary type="submit" 入室する
-  
+header class="navbar navbar-default" role="navigation"
+	h1 Sympathy
+
+.container
+	/教授のログイン画面
+	.loginform
+		p ログインフォーム	
+	.form-group	
+		p 
+	    	input type="text" name="id"
+		p
+		    input type="password" name="password"
+
+	.btn.btn-primary ログイン
