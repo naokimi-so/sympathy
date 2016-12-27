@@ -50,10 +50,13 @@ ActiveRecord::Schema.define(version: 20161227015702) do
 
   create_table "rooms", force: :cascade do |t|
     t.string   "title"
+    t.integer  "professor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "likes_count",  default: 0
     t.string   "speaker_deck"
   end
+
+  add_index "rooms", ["professor_id"], name: "index_rooms_on_professor_id"
 
 end

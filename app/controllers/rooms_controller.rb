@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @room_name = @room.title
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = @room.comments
     @speaker_deck_id = @room.speaker_deck
   end
 
@@ -27,6 +27,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:title,:speaker_deck)
+    params.require(:room).permit(:title,:speaker_deck).merge(professor_id: current_professor.id)
   end
 end
