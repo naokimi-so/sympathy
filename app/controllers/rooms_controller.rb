@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @room_name = @room.title
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = @room.comments
     @speaker_deck_id = @room.speaker_deck
   end
 
