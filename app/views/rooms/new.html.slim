@@ -1,8 +1,11 @@
 .row
   .div.container
-    = form_for(@room) do |f|
-      = f.label :title, 'ルーム名', class: 'room_name'
-      = f.text_field :title, placeholder: 'ルーム名を入力してください'
-      = f.label :SpeakerDeckID, 'SpeakerDeckID', class: 'room_name'
-      = f.text_field :speaker_deck, placeholder: 'SpeakerDeckIDを入力してください'
-      = f.submit 'Create', class: 'btn btn-sm btn-primary'
+    = form_for @room  , html:{class: "form-horizontal"} do |f|
+      .form-group
+        = f.label :title, 'ルーム名', class: 'room_name'
+        = f.text_field :title, placeholder: 'ルーム名を入力してください'
+      .form-group
+        = f.label :SpeakerDeckID, 'SpeakerDeckID', class: 'room_name'
+        = f.text_field :speaker_deck, placeholder: 'SpeakerDeckIDを入力してください'
+      .form-group
+        = f.submit 'Create', class: 'btn btn-sm btn-primary'

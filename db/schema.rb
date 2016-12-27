@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20161227015702) do
 
   create_table "comments", force: :cascade do |t|
-    t.string   "nickname"
+    t.string   "nickname",   default: "匿名"
     t.text     "text"
     t.integer  "room_id"
     t.datetime "created_at"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20161227015702) do
     t.integer  "room_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "likes_count", default: 0
   end
 
   add_index "likes", ["room_id"], name: "index_likes_on_room_id"
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161227015702) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "likes_count",  default: 0
     t.string   "speaker_deck"
   end
 
