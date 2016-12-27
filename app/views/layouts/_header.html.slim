@@ -1,4 +1,15 @@
 header.header
   .container
-    .h1
-      = link_to 'Sympathy', root_path
+    .col-md-3
+      .h1
+        = link_to 'Sympathy', root_path
+    .col-md-9
+      .header-manage  
+      - if professor_signed_in?
+        .col-md-6
+        .col-md-3
+          .mypage2
+            = link_to 'マイページ', professor_path(current_professor)
+        .col-md-3  
+          .logout2
+            = link_to 'ログアウト', destroy_professor_session_path, method: :delete
