@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     @room.comments.create(comment_params)
     @comments = @room.comments
+    redirect_to :back
   end
 
   private

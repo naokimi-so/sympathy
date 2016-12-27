@@ -6,6 +6,8 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @room_name = @room.title
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def search

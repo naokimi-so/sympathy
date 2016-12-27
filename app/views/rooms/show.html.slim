@@ -1,24 +1,27 @@
-.contents
-  h3 ルーム名：
-  = @room_name
+h3 ルーム名：
+= @room_name
 
-  / スライド
+/ スライド
 .slide
   script.speakerdeck-embed async="" data-id="1056d169aa704ef492a24d8cc2e5c66f" src="https://speakerdeck.com/assets/embed.js" 
 
-
-  i.glyphicon.glyphicon-thumbs-up
+button.btn.btn-default.btn-lg type="button" 
+  span.glyphicon.glyphicon-thumbs-up aria-hidden="true" 
   | Good
-  i.glyphicon.glyphicon-thumbs-down
+button.btn.btn-default.btn-lg type="button" 
+  span.glyphicon.glyphicon-thumbs-down aria-hidden="true" 
   | Bad
-  form.form-inline
-    .form-group
-      input.form-control placeholder="Name" type="text" /
-    .form-group
-      input.form-control placeholder="Email" type="email" /
-    button.btn.btn-default type="submit"  コメントする
 
-  /コメント
-  .comment-field
-    h3 コメント
-    .comment-content
+= form_for [@room,@comment] , html: {class: "form-inline"} do |f|
+  .form-group
+    = f.text_field :nickname, placeholder: '名前'
+  .form-group
+    = f.text_field :text, placeholder: 'コメント'
+  .form-group
+    = f.submit '送信', class: 'btn btn-sm btn-default'
+/コメント
+.comment-field
+  h3 コメント
+  .comment-content
+    - @comments.each do |comment|
+      p = comment.text
