@@ -9,7 +9,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-
   resources :professors, only: :show
-
 end
