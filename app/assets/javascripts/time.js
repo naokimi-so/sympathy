@@ -45,32 +45,4 @@ setTimeout(function() {
             }
         }
     });
-
-    while (!watchword) {
-        var watchword = prompt("コメントを受け取る合言葉を入力して下さい", "");
-    }
-    var milkcocoa = new MilkCocoa('yieldijxl4pvn.mlkcca.com');
-    var milkcocoaDS = milkcocoa.dataStore('comment');
-    var num = 0;
-    milkcocoaDS.on("push", function(sentData) {
-        console.log(sentData.value);
-        if (sentData.value.watchword == watchword) {
-            var commentDom = $("<p></p>", {
-                addClass: "comment",
-                "id": num
-            }).text(sentData.value.content).css({
-                top: (Math.random() * 90) + "%"
-            });
-            $("#niconicocoa").append(commentDom);
-            setTimeout(function(id) {
-                $("#niconicocoa #" + id).remove();
-            }, 10000, num);
-            num++;
-        }
-    });
-
-    milkcocoaDS.push({
-        content: "niconicocoa setup done!",
-        watchword: watchword
-    });
 }, 1000);

@@ -13,15 +13,12 @@ $(function() {
     $("#js_submitBtn").on("click", function() {
 
         var sendtext = $("#js_inputText").val();
-        var watchword = $("#js_inputWatchword").val();
         var _sendData = {
             content: sendtext,
             watchword: watchword
         };
 
-        if ((!sendtext == "") && (!watchword == "")) {
-            var milkcocoa = new MilkCocoa('yieldijxl4pvn.mlkcca.com');
-            var ds = milkcocoa.dataStore('comment');
+        if ((!sendtext == "")) {
 
             console.log(_sendData);
             ds.push(_sendData, function() {
@@ -31,16 +28,6 @@ $(function() {
                     location.replace(location.href + "?id=" + watchword);
                 }
             });
-        }
-    });
-
-    //コメントplaceholder設定
-    $.ajax({
-        url: "js/placeholder.txt",
-        dataType: "json",
-        success: function(data) {
-            var phComment = data[Math.floor(Math.random() * data.length)];
-            $("#js_inputText").val(phComment).focus();
         }
     });
 

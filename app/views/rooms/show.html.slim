@@ -1,3 +1,8 @@
+#niconicocoa
+  - @comments.each do |comment|
+    .comment
+      = comment.text
+
 h3.page-header 
   | ルーム名： 
   = @room_name
@@ -18,9 +23,9 @@ h3.page-header
       .form-group.comment-name
         = f.text_field :nickname, class: "form-control", placeholder: '名前'
       .form-group.comment-text
-        = f.text_field :text, class: "form-control", placeholder: 'コメント'
+        = f.text_field :text, class: "form-control", id: "js_inputText",placeholder: 'コメント'
       .form-group
-        = f.submit '送信', class: 'btn btn-sm btn-primary'
+        = f.submit '送信', class: 'btn btn-sm btn-primary', id: "comment-submit js_submitBtn"
   // コメントの表示
 .col-md-5
   .comment-table
