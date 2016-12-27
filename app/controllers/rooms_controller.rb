@@ -27,6 +27,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:title,:speaker_deck)
+    params.require(:room).permit(:title,:speaker_deck).merge(professor_id: current_professor.id)
   end
 end
