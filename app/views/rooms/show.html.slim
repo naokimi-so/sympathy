@@ -6,12 +6,8 @@ h3
 .slide
   script.speakerdeck-embed async="" data-id="#{@speaker_deck_id}" src="https://speakerdeck.com/assets/embed.js" 
 
-button.btn.btn-default.btn-lg type="button" 
-  span.glyphicon.glyphicon-thumbs-up aria-hidden="true" 
-  | Good
-button.btn.btn-default.btn-lg type="button" 
-  span.glyphicon.glyphicon-thumbs-down aria-hidden="true" 
-  | Bad
+#like-button
+  = render partial: 'like', locals: {room: @room}
 
 = form_for [@room,@comment] , html: {class: "form-inline"} do |f|
   .form-group
