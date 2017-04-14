@@ -4,6 +4,6 @@
       = text_field_tag 'keyword', nil, placeholder: "キーワード検索  "
       = submit_tag '検索', class: 'btn btn-sm btn-primary'
 
-    h4 検索結果
+    h4 検索一覧
     - @rooms.each do |room|
       = link_to room.title, "/rooms/#{room.id}", class: 'room_id'
